@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres16
+    restart: unless-stopped
+    ports:
+      - "5532:5432"
+    environment:
+      POSTGRES_USER: sherpa
+      POSTGRES_PASSWORD: test
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
